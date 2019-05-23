@@ -33,7 +33,7 @@ class Colorn{
         // 奖品1等奖;
         // 区间0-90;
         if(prize==1){
-            this.kai = 0;
+            this.kai = 20;
             this.bi = 90;
         }
         this.endDeg = true;

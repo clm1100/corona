@@ -6,27 +6,34 @@
         body {
             margin: 50px;
         }
-
-        .dial {
-            width: 200px;
-            height: 200px;
-            background: seagreen;
+        .cantaier{
+            width: 400px;
+            height: 400px;
             position: relative;
-            background: url("./img/run.png")
+        }
+        .dial {
+            width: 400px;
+            height: 400px;
+            background: seagreen;
+            background: url("./img/run.png");
+            background-size: cover;
         }
         .son{
             position: absolute;
-            right: 0px;
-            top:0px;
+            left: 50%;
+            bottom: 200px;
+            transform: translate3d(-50%,0,0);
             width: 10px;
-            height: 10px;
+            height: 100px;
             background: red;
         }
     </style>
 </head>
 <body>
 <h1>停止</h1>
-<div class="dial">
+<div class="cantaier">
+    <div class="dial">
+    </div>
     <div class="son"></div>
 </div>
 <script src="js/app3.js"></script>
