@@ -11,11 +11,16 @@ class Colorn{
     }
     loop() {
         requestAnimationFrame(()=> {
-            
+            this.endtime = Date.now()
             if(this.speed<20){
                 this.speed+=(1/20);
             }
-
+            if(this.endtime-this.startime>=4000){
+                this.speed-=(1/10);
+                if(this.speed<=5){
+                    this.speed=5;
+                }
+            }
             this.deg+=this.speed;
             this.canvas.style.transform = 'rotate(' + this.deg + 'deg) translate3d(0,0,0)';
             if(this.endDeg){
