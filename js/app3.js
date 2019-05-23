@@ -38,6 +38,7 @@ class Colorn{
         }
         this.endDeg = true;
     }
+    // 突破点在于停止的是一个区间,而不是一个具体的角度,如果是一个具体的角度,那么匀速最好完成;
     endstage(){
         if(this.endtime-this.startime>=9000){
             if(this.endDeg){
