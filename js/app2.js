@@ -26,7 +26,7 @@ class Colorn{
         })
     }
     stop(){
-        this.stopDeg  = 78
+        this.stopDeg  = 1
         this.sTime    = Date.now()
         this.duration = 3000
     }
