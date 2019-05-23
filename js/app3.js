@@ -8,6 +8,8 @@ class Colorn{
         this.endDeg = 0;
         this.startime=null;
         this.endtime = null;
+        this.kai =null;
+        this.bi =null;
     }
     loop() {
         requestAnimationFrame(()=> {
@@ -23,23 +25,31 @@ class Colorn{
             }
             this.deg+=this.speed;
             this.canvas.style.transform = 'rotate(' + this.deg + 'deg) translate3d(0,0,0)';
+            if(this.endstage())return 
+            this.loop()
+        })
+    }
+    stop(prize){
+        // 奖品1等奖;
+        // 区间0-90;
+        if(prize==1){
+            this.kai = 0;
+            this.bi = 90;
+        }
+        this.endDeg = true;
+    }
+    endstage(){
+        if(this.endtime-this.startime>=9000){
             if(this.endDeg){
                 var mode = this.deg%360;
-                console.log(mode);
-                if(0<mode&&mode<=90){
-                    return;
+                console.log(mode,this.kai,this.bi);
+                if(this.kai<mode&&mode<this.bi){
+                    return true;
                 }else{
                     console.log("再转一圈");
                 }
             }
-            this.loop()
-        })
-    }
-    stop(){
-        // 奖品1等奖;
-        // 区间0-90;
-        
-        this.endDeg = true;
+            }
     }
 }
 
@@ -48,5 +58,5 @@ colorn.startime = Date.now();
 colorn.loop();
 
 document.querySelector("h1").addEventListener("click",()=>{
-    colorn.stop();
+    colorn.stop(1);
 })
